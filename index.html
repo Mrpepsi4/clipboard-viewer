@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clipboard Monitor</title>
+</head>
+<body>
+
+  <p id="clipboardContent"></p>
+
+  <script>
+    function updateClipboard() {
+      navigator.clipboard.readText().then(clipText => {
+        document.getElementById("clipboardContent").innerText = "Clipboard content: " + clipText;
+      });
+    }
+
+    
+    setInterval(updateClipboard, 2000);
+  </script>
+
+</body>
+</html>
